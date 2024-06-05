@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Gabriel Grison",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -340.9, "left": -273.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -330,
+      "left": -111.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -112.06,
+      "left": -460.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -393.3, "left": -437.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h0" ] ],
+    [ "esp:D2", "led1:A", "red", [ "h0" ] ],
+    [ "esp:D5", "oled1:SDA", "blue", [ "h47.7", "v124.8", "h-268.87" ] ],
+    [ "esp:D4", "oled1:SCL", "purple", [ "h28.5", "v86.5", "h-259.5" ] ],
+    [ "esp:GND.2", "oled1:GND", "black", [ "h0" ] ],
+    [ "esp:GND.2", "dht1:GND", "black", [ "h0" ] ],
+    [ "oled1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "esp:VIN", "dht1:VCC", "red", [ "h0" ] ],
+    [ "esp:D13", "dht1:SDA", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

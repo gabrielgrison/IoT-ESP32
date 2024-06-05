@@ -1,0 +1,7 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+DHT sensor library
+DHT22
+ESP8266 and ESP32 OLED driver for SSD1306 displays
+DHT sensor library for ESPx
